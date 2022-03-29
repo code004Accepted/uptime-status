@@ -2,7 +2,7 @@
 window.Config = {
 
   // 站点名
-  SiteName: 'Uptime Status',
+  SiteName: 'Ender\'s Status',
 
   // 站点链接
   SiteUrl: '/',
@@ -32,12 +32,12 @@ window.Config = {
   // 导航栏菜单
   Navi: [
     {
-      text: 'Homepage',
-      url: 'https://status.org.cn/'
+      text: 'GitHub',
+      url: 'https://github.com/code004Accepted'
     },
     {
-      text: 'GitHub',
-      url: 'https://github.com/yb/uptime-status'
+      text: 'Blog',
+      url: 'https://code004accepted.github.io'
     }
   ]
 };
