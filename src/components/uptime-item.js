@@ -11,15 +11,15 @@ const UptimeItem = (props) => {
   const { monitor } = props;
 
   const status = {
-    ok: '正常',
-    down: '无法访问',
-    unknow: '未知'
+    ok: 'Operational',
+    down: 'Down',
+    unknow: 'Unknown'
   };
 
   const total = useMemo(() => {
     return monitor.total.times
-      ? `最近 ${CountDays} 天故障 ${monitor.total.times} 次，累计 ${formatDuration(monitor.total.duration)}，平均可用率 ${monitor.average}%`
-      : `最近 ${CountDays} 天可用率 ${monitor.average}%`;
+      ? `${monitor.total.times} incidents logged in past ${CountDays} days, with a total duration of ${formatDuration(monitor.total.duration)}. Successful Connection Rate: ${monitor.average}%`
+      : `Successful Connection Rate in past ${CountDays} days: ${monitor.average}%`;
   }, [CountDays, monitor]);
 
   const initial = useMemo(() => {
@@ -42,7 +42,7 @@ const UptimeItem = (props) => {
       </div>
       <ReactTooltip className="tooltip" place="top" type="dark" effect="solid" />
       <div className="foot">
-        <span>今天</span>
+        <span>Today</span>
         <span>{total}</span>
         <span>{initial.format('YYYY-MM-DD')}</span>
       </div>
